@@ -3,6 +3,7 @@ from flask import Flask, url_for, request
 app = Flask(__name__)
 
 
+# Колонизация Марса
 @app.route('/')
 def main():
     return 'Миссия Колонизация Марса'
@@ -13,6 +14,7 @@ def index():
     return "И на Марсе будут яблони цвести!"
 
 
+# Рекламная кампания
 @app.route('/promotion')
 def promotion():
     a_list = ['Человечество вырастает из детства.', 'Человечеству мала одна планета.',
@@ -20,6 +22,7 @@ def promotion():
     return '</br>'.join(a_list)
 
 
+# Изображение Марса
 @app.route('/image_mars')
 def image_mars():
     return f"""<!doctype html>
@@ -36,6 +39,7 @@ def image_mars():
                 </html>"""
 
 
+# Реклама с картинкой
 @app.route('/promotion_image')
 def promotion_image():
     return f"""<!doctype html>
@@ -72,6 +76,7 @@ def promotion_image():
                 </html>"""
 
 
+# Отбор астронавтов
 @app.route('/form_sample', methods=['POST', 'GET'])
 def form_sample():
     if request.method == 'GET':
